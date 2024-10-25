@@ -19,23 +19,46 @@
                 max-width: 100%;
                 overflow-wrap: break-word;
                 word-wrap: break-word;
-                padding: 10px; /* Add some padding to keep content away from the edges */
+                padding: 10px;
+            }
+            footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1em;
+                padding: 15px 0;
+                border-top: 1px solid #ddd;
+            }
+            footer a {
+                text-decoration: none;
+                color: #333;
+                margin: 0 10px;
+                transition: color 0.3s ease;
+            }
+            footer a:hover {
+                color: #0073e6;
             }
         </style>
     </head>
     
-<body>
-    <div id="content"></div>
-    <script>
-        fetch('README.md')
-            .then(response => response.text())
-            .then(text => {
-                const contentDiv = document.getElementById('content');
-                contentDiv.innerHTML = marked(text);
-            })
-            .catch(error => {
-                console.error("An error occurred while loading the Markdown file:", error);
-            });
-    </script>
-</body>
+    <body>
+        <div id="content"></div>
+        <footer>
+            <a href="https://github.com/ai16z" target="_blank">GitHub</a> |
+            <a href="https://x.com/pmairca" target="_blank">X</a> |
+            <a href="https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC" target="_blank">DAO</a> |
+            <a href="https://discord.gg/xe7HtWru" target="_blank">Discord</a>
+        </footer>
+        
+        <script>
+            fetch('README.md')
+                .then(response => response.text())
+                .then(text => {
+                    const contentDiv = document.getElementById('content');
+                    contentDiv.innerHTML = marked(text);
+                })
+                .catch(error => {
+                    console.error("An error occurred while loading the Markdown file:", error);
+                });
+        </script>
+    </body>
 </html>
