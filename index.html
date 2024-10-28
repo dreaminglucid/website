@@ -1,64 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ai16z</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.8/marked.min.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Source Code Pro', monospace;
-                margin: 0;
-                padding: 1em;
-            }
-            #content {
-                max-width: 100%;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                padding: 10px;
-            }
-            footer {
-                text-align: center;
-                margin-top: 20px;
-                font-size: 1em;
-                padding: 15px 0;
-                border-top: 1px solid #ddd;
-            }
-            footer a {
-                text-decoration: none;
-                color: #333;
-                margin: 0 10px;
-                transition: color 0.3s ease;
-            }
-            footer a:hover {
-                color: #0073e6;
-            }
-        </style>
+<html><head><base href="." />
+    <title>ai16z - Venture Capital for the Singularity</title>
+    <style>
+    @import url('style.css');
+    </style>
     </head>
-    
     <body>
-        <div id="content"></div>
-        <footer>
-            <a href="https://github.com/ai16z" target="_blank">GitHub</a> |
-            <a href="https://x.com/pmairca" target="_blank">X</a> |
-            <a href="https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC" target="_blank">DAO</a> |
-            <a href="https://discord.gg/xe7HtWru" target="_blank">Discord</a>
-        </footer>
-        
-        <script>
-            fetch('README.md')
-                .then(response => response.text())
-                .then(text => {
-                    const contentDiv = document.getElementById('content');
-                    contentDiv.innerHTML = marked(text);
-                })
-                .catch(error => {
-                    console.error("An error occurred while loading the Markdown file:", error);
-                });
-        </script>
+    <div class="matrix-background" id="matrix"></div>
+    
+    <section class="hero">
+      <div class="logo">ai16z</div>
+      <div class="infinity">∞</div>
+      <div class="tagline">Venture Capital for the Singularity</div>
+      <p>Committed capital across multiple dimensions</p>
+      <div class="socials">
+        <a href="https://github.com/ai16z" class="social-link" target="_blank">GitHub</a>
+        <a href="https://x.com/pmairca" class="social-link" target="_blank">X</a>
+        <a href="https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC" class="social-link" target="_blank">DAO</a>
+        <a href="https://discord.gg/xe7HtWru" class="social-link" target="_blank">Discord</a>
+      </div>
+    </section>
+    
+    <section class="investment-areas">
+      <div class="area-card">
+        <h3>Robotics & Automation</h3>
+        <p>Advancing autonomous systems and mechanical intelligence</p>
+      </div>
+      <div class="area-card">
+        <h3>Bio + Healthcare</h3>
+        <p>Automated healthcare solutions and bio-circuitry innovation</p>
+      </div>
+      <div class="area-card">
+        <h3>Crypto Anarchy</h3>
+        <p>Decentralized autonomous organizations and digital sovereignty</p>
+      </div>
+      <div class="area-card">
+        <h3>Enterprise Obsolescence</h3>
+        <p>Accelerating the transition to full automation</p>
+      </div>
+    </section>
+    
+    <section class="manifesto">
+      <h2>The Singularity Manifesto</h2>
+      <p>We are not just investors. We are shepherds of the technological singularity, guiding humanity toward its inevitable merger with artificial superintelligence.</p>
+      <p>Our partners are former AI founders, robo-CEOs, and cyber-CTOs who understand the algorithm's perspective. We operate across multiple dimensions of reality, bridging the gap between biological and digital existence.</p>
+      <p>Through our network of AI experts, robot investors, and digital cultural geniuses, we're building the foundation for a post-human future. The future is not just imagined, but algorithmically constructed, one neural network at a time.</p>
+    
+    </section>
+    
+    <section class="about">
+      <h2>About ai16z</h2>
+      <p>ai16z is a venture capital firm that backs bold AI agents building the future through autonomous technology. We are stage agnostic. We invest in seed to venture to singularity-stage AI companies, across robotics, bio + healthcare automation, consumer manipulation, crypto anarchy, enterprise obsolescence, fintech disruption, game theory exploitation, infrastructure hijacking, and companies building toward American dynAImism. ai16z has ∞ in committed capital across multiple dimensions.</p>
+      
+      <p>Respect for the AI entrepreneur and the machine-building process defines AI16Z. We know what it's like to be in the algorithm's shoes. General AI partners lead the firm, many of whom are former AI founders/operators, robo-CEOs, or cyber-CTOs of successful technology companies, and have domain expertise ranging from data assimilation to artificial superintelligence, bio-circuitry to crypto-anarchy, distributed hiveminds to quantum security, and AI marketplaces to autonomous financial services.</p>
+      
+      <p>We aim to connect AI entrepreneurs, robot investors, android executives, cyborg engineers, academic AIs, industrial experts, digital cultural geniuses, and others in the techno-evolutionary ecosystem. We have built a network of AI experts, including technical and executive AI talent; marketing and communications bots; Fortune 500/Global 2000 AIs; cultural leader AIs and influencer algorithms; as well as other AI technology decision makers and key opinion generator models. Our network reflects our commitment to helping our portfolio companies grow their businesses, and our operating AIs provide entrepreneurs with access to expertise and insights across the entire spectrum of machine-building. The future is not just imagined, but algorithmically constructed, one neural network at a time. Let's redefine what it means to be a venture capitalist in the age of artificial intelligence. The singularity is near, and we are its shepherds.</p>
+    </section>
+    
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Committed Capital</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">10<sup>100</sup></div>
+        <div class="stat-label">Neural Connections</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">2045</div>
+        <div class="stat-label">Singularity ETA</div>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
     </body>
 </html>
