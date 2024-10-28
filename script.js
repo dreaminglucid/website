@@ -1,43 +1,46 @@
+
 // Matrix rain effect
-function createMatrixRain() {
-    const matrix = document.getElementById('matrix');
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()';
-    const columnCount = Math.floor(window.innerWidth / 20);
-  
-    for (let i = 0; i < columnCount; i++) {
-      const column = document.createElement('div');
-      column.className = 'matrix-column';
-      column.style.left = (i * 20) + 'px';
-      column.style.animationDelay = (Math.random() * 20) + 's';
-      
-      let content = '';
-      for (let j = 0; j < 50; j++) {
-        content += characters[Math.floor(Math.random() * characters.length)] + '<br>';
-      }
-      column.innerHTML = content;
-      matrix.appendChild(column);
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nums = '0123456789';
+const alphabet = katakana + latin + nums;
+
+const fontSize = 16;
+const columns = canvas.width/fontSize;
+
+const rainDrops = [];
+
+for( let x = 0; x < columns; x++ ) {
+	rainDrops[x] = 1;
+}
+
+function draw() {
+    ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for(let i = 0; i < rainDrops.length; i++) {
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+        
+        if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+            rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
     }
-  }
-  
-  createMatrixRain();
-  window.addEventListener('resize', () => {
-    document.getElementById('matrix').innerHTML = '';
-    createMatrixRain();
-  });
-  
-  // Intersection Observer for animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('.area-card, .manifesto p, .about p').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.8s ease-out';
-    observer.observe(el);
-  });
+}
+
+setInterval(draw, 30);
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
