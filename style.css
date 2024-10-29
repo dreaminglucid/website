@@ -63,6 +63,7 @@ body {
   align-items: center;
   padding: 2rem;
   text-align: center;
+  background: transparent;
 }
 
 .logo {
@@ -269,4 +270,13 @@ footer img {
     padding: 1rem;
     gap: 0.8rem;
   }
+}
+
+#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

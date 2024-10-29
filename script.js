@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('matrixCanvas');
-    console.log('Canvas element:', canvas);
     if (!canvas) {
         console.error('Matrix canvas element not found');
         return;
     }
     const ctx = canvas.getContext('2d');
-    console.log('Canvas context:', ctx);
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -26,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function draw() {
-        ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+        ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        ctx.fillStyle = '#0F0';
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.15)';
         ctx.font = fontSize + 'px monospace';
 
         for(let i = 0; i < rainDrops.length; i++) {
