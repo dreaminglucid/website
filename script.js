@@ -47,4 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     });
+
+    const copyButtons = document.querySelectorAll('.copy-button');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const value = button.dataset.value;
+            const copyText = button.querySelector('.copy-text');
+            
+            try {
+                await navigator.clipboard.writeText(value);
+                copyText.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    copyText.textContent = 'Copy';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+        });
+    });
 });
