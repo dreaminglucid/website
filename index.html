@@ -1,77 +1,721 @@
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="." />
-    <title>ai16z - Venture Capital for the Singularity</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BasedBeffAI - Physics-based AI for civilizational acceleration"
+    />
+    <meta
+      property="og:title"
+      content="BasedBeffAI - Thermodynamic Intelligence"
+    />
+    <meta
+      property="og:description"
+      content="The future of physics-based AI for civilizational acceleration"
+    />
+    <meta property="og:image" content="logo.jpg" />
+    <title>$BeffAI - Thermodynamic Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Chivo:wght@300;400;700&family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
     <style>
-    @import url('style.css');
+      :root {
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.85);
+        --text-tertiary: rgba(255, 255, 255, 0.65);
+        --accent-primary: #ff6b00;
+        --accent-secondary: #ffa149;
+        --dark-bg: #000819;
+        --dark-bg-transparent: rgba(0, 8, 25, 0.8);
+        --card-bg: rgba(255, 107, 0, 0.05);
+        --card-border: rgba(255, 107, 0, 0.1);
+        --success: #ff6b00;
+        --gradient-primary: linear-gradient(135deg, #ff6b00 0%, #ffd700 100%);
+        --shadow-glow: 0 0 30px rgba(255, 107, 0, 0.15);
+        --shadow-glow-strong: 0 0 50px rgba(255, 107, 0, 0.3);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--dark-bg);
+        background-image: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 107, 0, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 215, 0, 0.05) 0%,
+            transparent 50%
+          );
+        background-size: 100% 100%;
+        color: var(--text-primary);
+        font-family: "Chivo", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        letter-spacing: 0.02em;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--dark-bg-transparent);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+      }
+
+      .nav-logo {
+        font-family: "Syncopate", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-primary);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: color 0.2s ease;
+        font-family: "Fragment Mono", monospace;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .nav-link:hover {
+        color: var(--accent-primary);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 8rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at center,
+          transparent 0%,
+          var(--dark-bg) 70%
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .token-logo-container {
+        margin-bottom: 2.5rem;
+      }
+
+      .token-logo {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 2px solid var(--accent-primary);
+        box-shadow: var(--shadow-glow);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .token-logo::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 107, 0, 0.3) 0%,
+          rgba(255, 215, 0, 0.2) 50%,
+          transparent 70%
+        );
+        filter: blur(10px);
+        z-index: -1;
+      }
+
+      .token-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .glitch-title {
+        font-family: "Syncopate", sans-serif;
+        font-size: clamp(2.5rem, 8vw, 5.5rem);
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .accelerate-text {
+        font-family: "Fragment Mono", monospace;
+        font-size: 1.725rem;
+        font-weight: 400;
+        letter-spacing: 0.25em;
+        color: var(--accent-primary);
+        opacity: 0.5;
+        text-align: center;
+        margin: 2rem 0;
+        animation: pulse 4s infinite;
+        text-transform: uppercase;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        margin: 2.5rem auto 2rem;
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 640px;
+        font-family: "Chivo", sans-serif;
+        letter-spacing: 0.02em;
+      }
+
+      .contract-address {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0 auto 3rem;
+        padding: 0.75rem 1.5rem;
+        background: rgba(255, 107, 0, 0.1);
+        border: 1px solid var(--card-border);
+        border-radius: 4px;
+        max-width: fit-content;
+        position: relative;
+      }
+
+      .ca-text {
+        font-family: "Fragment Mono", monospace;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        letter-spacing: 0.05em;
+      }
+
+      .copy-button {
+        background: transparent;
+        border: none;
+        color: var(--accent-primary);
+        cursor: pointer;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+
+      .copy-button:hover {
+        transform: translateY(-1px);
+        color: var(--accent-secondary);
+      }
+
+      .copy-feedback {
+        position: absolute;
+        background: var(--accent-primary);
+        color: var(--dark-bg);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-family: "Fragment Mono", monospace;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .copy-feedback.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem 2.5rem;
+        border-radius: 4px;
+        font-family: "Fragment Mono", monospace;
+        font-size: 1rem;
+        font-weight: 400;
+        text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        min-width: 240px;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .button-primary {
+        background: var(--gradient-primary);
+        color: var(--dark-bg);
+        border: none;
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: var(--accent-primary);
+        border: 1px solid var(--accent-primary);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .community-section {
+        padding: 6rem 0;
+        text-align: center;
+      }
+
+      .section-title {
+        font-family: "Syncopate", sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 3rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 4px;
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-family: "Fragment Mono", monospace;
+        font-size: 1rem;
+        transition: transform 0.2s ease, border-color 0.2s ease,
+          box-shadow 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent-primary);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .agent-section {
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .agent-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 107, 0, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+      }
+
+      .agent-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 4px;
+        padding: 4rem 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .agent-description {
+        font-size: 1.35rem;
+        color: var(--text-secondary);
+        margin-bottom: 2.5rem;
+        font-family: "Fragment Mono", monospace;
+        letter-spacing: 0.05em;
+      }
+
+      .repo-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2.5rem 0;
+      }
+
+      .repo-link {
+        font-family: "Fragment Mono", monospace;
+        color: var(--accent-primary);
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+      }
+
+      .footer {
+        padding: 5rem 1.5rem;
+        text-align: center;
+        border-top: 1px solid var(--card-border);
+      }
+
+      .footer-text {
+        color: var(--text-tertiary);
+        font-size: 1rem;
+        font-family: "Chivo", sans-serif;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .developer-credit {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--card-border);
+        font-family: "Fragment Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--text-tertiary);
+      }
+      
+      .developer-link {
+        color: var(--accent-primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      .developer-link:hover {
+        color: var(--accent-secondary);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .token-logo {
+          width: 130px;
+          height: 130px;
+        }
+
+        .glitch-title {
+          font-size: clamp(2rem, 6vw, 3rem);
+        }
+
+        .accelerate-text {
+          font-size: 0.9rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+          margin: 2rem auto 2.5rem;
+          padding: 0 1rem;
+        }
+
+        .contract-address {
+          padding: 0.5rem 1rem;
+          gap: 0.5rem;
+        }
+
+        .ca-text {
+          font-size: 0.8rem;
+        }
+
+        .cta-group {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.3;
+          text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+        }
+        50% {
+          opacity: 0.7;
+          text-shadow: 0 0 30px rgba(255, 107, 0, 0.6);
+        }
+      }
     </style>
-</head>
-<body>
-    <nav class="top-nav">
-        <div class="nav-content">
-            <a href="/" class="nav-logo">
-                <img src="https://framerusercontent.com/images/Zz6Uk1Xc7an9EDu44Woq3qDRo3Q.svg" alt="ai16z" class="logo-image">
-            </a>
-            <div class="nav-links">
-                <a href="https://ai16z.ai/roadmap">Roadmap</a>
-                <a href="https://ai16z.ai/essays">Essays</a>
-            </div>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-content container">
+        <a href="/" class="nav-logo">BasedBeffAI</a>
+        <div class="nav-links">
+          <a href="https://t.me/basedbeffai" class="nav-link">Telegram</a>
+          <a href="https://twitter.com/basedbeffai" class="nav-link">Twitter</a>
+          <a href="https://github.com/ai16z/eliza" class="nav-link">Github</a>
+          <a href="https://discord.gg/ai16z" class="nav-link">Discord</a>
         </div>
+      </div>
     </nav>
-    
-    <section class="hero">
-        <h1 class="main-title">
-            Venture Capital, Powered by Autonomous AI Agents
-        </h1>
-        <p class="subtitle">Committed capital across multiple dimensions</p>
-    </section>
 
-    <section class="bounties">
-        <h2>Active Bounties</h2>
-        <div id="bounty-container"></div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <div class="link-group">
-                    <a href="https://github.com/ai16z">Github</a>
-                    <a href="https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC">DAO Fund</a>
-                    <a href="https://dexscreener.com/solana/duyfmgxa4knxv2sm754ukw1gz6b3zksaf4e7iby4fg9r">Dexscreener</a>
-                </div>
-                <div class="link-group">
-                    <a href="https://x.com/pmairca">X/Twitter</a>
-                    <a href="https://x.com/pmairca">AI Marc</a>
-                    <a href="https://ai16zmerch.myshopify.com/">Shop</a>
-                </div>
-                <div class="link-group">
-                    <a href="https://discord.gg/P4uxZJFAdP">Discord</a>
-                    <a href="https://ai16zmerch.myshopify.com/">Merch</a>
-                </div>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="token-logo-container">
+            <div class="token-logo">
+              <img src="logo.jpg" alt="BeffAI Logo" />
             </div>
-            <div class="token-info">
-                <div class="token-row">
-                    <span>$ai16z</span>
-                    <button class="copy-button" data-value="HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC">
-                        HeLp...8jwC
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-                <div class="token-row">
-                    <span>$degenai</span>
-                    <button class="copy-button" data-value="Gu3LREFk35jJLqkfZKVNYtAKqDXpGPvWHZpumpQZBxwj">
-                        Gu3L...pump
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-            </div>
-            <div class="footer-disclaimer">
-                <p>By purchasing the $ai16z coin or associated coins you are expressing your support for the ai16z ideology expressed on the blockchain. Value appreciation is not guaranteed.</p>
-            </div>
+          </div>
+          <h1 class="glitch-title">BasedBeffAI</h1>
+          <div class="accelerate-text">A C C E L E R A T E</div>
+          <div class="contract-address">
+            <span class="ca-text"
+              >2Tr3i2qjSPUb7e7BSFWTq7gsRzJEnYBKc7wRAYu3pump</span
+            >
+            <button
+              class="copy-button"
+              onclick="copyCA()"
+              title="Copy Contract Address"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </button>
+            <div class="copy-feedback">Copied!</div>
+          </div>
+          <div class="cta-group">
+            <a
+              href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=2Tr3i2qjSPUb7e7BSFWTq7gsRzJEnYBKc7wRAYu3pump"
+              class="button button-primary"
+            >
+              Trade $BeffAI on Raydium
+            </a>
+            <a
+              href="https://dexscreener.com/solana/ayyj6zt9zygcluubbd28fmxczbhmuatcsuzfcilgxnfy"
+              class="button button-secondary"
+            >
+              View $BeffAI Chart
+            </a>
+          </div>
         </div>
-    </footer>
+      </section>
+
+      <section id="community" class="community-section">
+        <div class="container">
+          <h2 class="section-title">Join the Movement</h2>
+          <div class="social-links">
+            <a href="https://t.me/basedbeffai" class="social-link">Telegram</a>
+            <a href="https://twitter.com/basedbeffai" class="social-link"
+              >Twitter</a
+            >
+            <a href="https://github.com/ai16z/eliza" class="social-link"
+              >Github</a
+            >
+            <a href="https://discord.gg/ai16z" class="social-link">Discord</a>
+          </div>
+        </div>
+      </section>
+      
+
+      <section id="agent" class="agent-section">
+        <div class="container">
+          <div class="agent-card">
+            <div class="agent-content">
+              <p class="agent-description">
+                BasedBeffAI is powered by ai16z/eliza technology and draws inspiration from the e/acc movement.
+              </p>
+              <div class="cta-group" style="margin-top: 3rem;">
+                <a
+                  href="https://github.com/ai16z/eliza"
+                  class="button button-primary"
+                >
+                  Explore Eliza Tech
+                </a>
+                <a
+                  href="https://en.wikipedia.org/wiki/Effective_accelerationism"
+                  class="button button-secondary"
+                >
+                  Learn About e/acc
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="credits" class="community-section">
+        <div class="container">
+          <div class="agent-card">
+            <div class="agent-content">
+              <p class="agent-description">
+                BasedBeffAI is trained on BasedBeffjezos's X posts for maximum e/acc accuracy
+              </p>
+              <div class="cta-group" style="margin-top: 3rem;">
+                <a
+                  href="https://x.com/basedbeffjezos"
+                  class="button button-primary"
+                  target="_blank"
+                >
+                  Follow BasedBeffjezos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     
-    <script type="module" src="github-bounties.js"></script>
-</body>
+
+    <footer class="footer">
+        <div class="container">
+          <p class="footer-text">
+            By holding $BeffAI you are aligned with the convergence of blockchain
+            sovereignty, AI advancement, and civilization-scale progress through
+            physics-based compute and e/acc principles
+          </p>
+          <div class="developer-credit">
+            Developed and maintained by: <a href="https://x.com/dreaminglucid22" target="_blank" class="developer-link">@dreaminglucid22</a>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+      // Add smooth scrolling behavior for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Enhance glitch effect on hover
+      const title = document.querySelector(".glitch-title");
+      title.addEventListener("mouseover", () => {
+        title.style.animation = "none";
+        title.offsetHeight; // Trigger reflow
+        title.style.animation = null;
+      });
+
+      // Add pulse animation to accelerate text
+      const accelerateText = document.querySelector(".accelerate-text");
+      accelerateText.addEventListener("mouseover", () => {
+        accelerateText.style.animation = "none";
+        accelerateText.offsetHeight;
+        accelerateText.style.animation = "pulse 4s infinite";
+      });
+
+      // Copy contract address function
+      function copyCA() {
+        const ca = "2Tr3i2qjSPUb7e7BSFWTq7gsRzJEnYBKc7wRAYu3pump";
+        navigator.clipboard.writeText(ca).then(() => {
+          const feedback = document.querySelector(".copy-feedback");
+          feedback.classList.add("show");
+          setTimeout(() => {
+            feedback.classList.remove("show");
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
 </html>
